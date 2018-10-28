@@ -1,3 +1,12 @@
+var vel1 = 30000;
+var vel2 = 60000;
+var vel3 = 60 * 60 * 1000;
+
+// Pruebas
+// vel1 = 3000;
+// vel2 = 3000;
+// vel3 = 30000;
+
 $( document ).ready(function() {
     $("#musicBack")[0].volume = 0.3;
 
@@ -21,7 +30,7 @@ function parte0() {
         $("#sound2")[0].play();
     }, 29000);
 
-    setTimeout(parte1, 30000);
+    setTimeout(parte1, vel1);
 }
 
 function parte1() {
@@ -30,7 +39,7 @@ function parte1() {
     $('html').css({'background-image': 'url(img/back2.jpg)'});
     $("#parte1").fadeIn();
 
-    setTimeout(parte2, 3000);
+    setTimeout(parte2, vel2);
 }
 
 function parte2() {
@@ -38,7 +47,7 @@ function parte2() {
     $("#intro").fadeOut();
     $("#parte1").fadeOut();
     $('html').css({'background-image': 'url(img/back3.jpg)'});
-    var time = 60 * 60 * 1000;
+    var time = vel3;
     var deadline = new Date(Date.parse(new Date()) + time);
     initializeClock('clockdiv', deadline);
     $("#parte2").fadeIn();
