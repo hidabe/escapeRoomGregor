@@ -4,7 +4,7 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    opacity: 0.6;
+    opacity: 0.7;
     color: white;
 }
 
@@ -12,19 +12,29 @@ html {
     font-family: 'Nosifer', cursive !important;
 }
 
-.big {
+.titleCenter {
     text-align: center;
-    font-size: 300%;
-}
-
-.center {
+    font-size: 200%;
     position: absolute;
     width: 600px;
-    height: 200px;
-    top: 50%;
+    height: 100px;
+    top: 30%;
     left: 50%;
     margin-left: -300px;
-    margin-top: -100px;
+    margin-top: -50px;
+}
+
+#title1 {
+    text-align: center;
+    font-size: 100%;
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -50px;
+    -webkit-transition: all 30s ease;
 }
 
 .footer {
@@ -33,4 +43,89 @@ html {
     bottom: 0;
     width: 100%;;
     text-align: center;
+}
+
+#textoLateralGanador {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    width: 40%;
+    text-align: right;
+    font-size: 160%;
+    font-weight: bold;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: "Times New Roman" !important;
+}
+
+/** VIDEO **/
+.videoDiv {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+video {
+    border: 3px solid #330000;
+}
+
+/** PARTE 2 */
+#parte2 {
+    width: 100%;
+}
+.pista {
+    position: absolute;
+    font-size: 300%;
+    line-height: 1.5;
+    width: 40%;
+    top: 10%;
+    left: 10%;
+}
+.inputDiv {
+    position: absolute;
+    font-size: 300%;
+    line-height: 1.5;
+    width: 40%;
+    top: 15%;
+    right: 5%;
+    text-align: right;
+}
+.clave {
+    width: 40%;
+    font-size: 90%;
+    padding: 5px;
+    border: 3px solid #000;
+}
+#clock {
+    width: 100%;
+    text-align: right;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
+#clockdiv{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    font-size: 50px;
+    text-align: center;
+}
+
+#clockdiv > div{
+    padding: 20px;
+    border-radius: 3px;
+    background: #091905;
+    display: inline-block;
+}
+
+#clockdiv div > span{
+    padding: 25px;
+    border-radius: 3px;
+    background: #811016;
+    display: inline-block;
+}
+
+.smalltext{
+    padding-top: 15px;
+    font-size: 26px;
 }

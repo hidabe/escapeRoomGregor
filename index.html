@@ -1,16 +1,118 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<link rel="stylesheet" href="./material.css">
 		<link rel="stylesheet" href="./style.css">
-		<script src="./material.js"></script>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<!--<script src="./material.js"></script>-->
+		<script src="./jquery.min.js"></script>
+		<script src="./scripts.js"></script>
+		<!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
 		<link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
 	</head>
 	<body>
-		<h1 class="center big">
-			Bienvenido al caso del doctor Mc Gregor
-		</h1>
+		<div id="parte0" style="display:none">
+			<h1 id="title1">
+				Bienvenido al caso del doctor Mc Gregor
+			</h1>
+		</div>
 
-		<div class="footer mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+		<div id="parte1" style="display:none">
+			<div class="videoDiv">
+				<video
+					id="intro"
+					src="video/demo.mp4">
+				</video>
+			</div>
+		</div>
+
+		<div id="parte2" style="display:none">
+
+			<div id="clock">
+				<div id="clockdiv">
+					<div>
+						<span class="minutes"></span>
+						<div class="smalltext">Minutos</div>
+					</div>
+					<div>
+						<span class="seconds"></span>
+						<div class="smalltext">Segundos</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="parte21" style="display:none">
+				<div id="pista1" class="pista">
+					Son como ratones que estan destruyendo nuestro mundo... acabemos con ellos...
+				</div>
+				<div id="input1" class="inputDiv">
+					Escribe el nombre<br/>
+					<form id="form1">
+						<input class="clave" name="clave1" id="clave1" type="string" maxlength="5"/><br/>
+					</form>
+				</div>
+			</div>
+
+			<div id="error" style="display:none">
+				<h1 class="titleCenter">
+					Error! La palabra correcta no es <b><u><span style="color: #FF0000" id="palabraIncorrecta"></span></u></b>, prueba de nuevo, pero no lo hagas al azar, lee bien todas las pistas antes de intentarlo de nuevo porque el tiempo corre...
+				</h1>
+			</div>
+
+			<div id="parte22Correcto" style="display:none">
+				<h1 class="titleCenter">
+					Enhorabuena! has acertado la palabra!
+				</h1>
+			</div>
+
+			<div id="parte23" style="display:none">
+				<div id="pista2" class="pista">
+					En la maleta que Gregor llevaba a Mexico... ahi esta la cura...
+				</div>
+				<div id="input2" class="inputDiv">
+					La cura es<br/>
+					<form id="form2">
+						<input class="clave" name="clave2" id="clave2" type="string" maxlength="4"/><br/>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div id="parte3Gana" style="display:none">
+			<div class="videoDiv">
+				<video
+					id="finGana"
+					src="video/finGana.mp4">
+				</video>
+			</div>
+			<div id="textoLateralGanador">
+				El mundo ha sobrevivido, gracias a vosotros y vosotras, sois unos valientes, ¡enahorabuena! Amor, mucho amor, es lo único que puede ganar a la tristeza.
+			</div>
+		</div>
+
+		<div id="parte3Pierde" style="display:none">
+			<div class="titleCenter">
+				Has perdido, el mundo se ha convertido en una fábrica de Zombies...
+			</div>
+		</div>
+
+		<!-- Audio -->
+		<audio
+				id="musicBack"
+				loop
+				autoplay
+				src="audio/musicaFondo.mp3"></audio>
+
+		<audio id="sound1"
+			   src="audio/rugido_monstruo.mp3"
+		></audio>
+
+		<audio id="sound2"
+			   src="audio/risa_monstruo.mp3"
+		></audio>
+
+		<audio id="sound3"
+			   src="audio/hombre_lobo.mp3"
+		></audio>
+
 	</body>
 </html>
