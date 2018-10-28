@@ -3,9 +3,9 @@ var vel2 = 60000;
 var vel3 = 60 * 60 * 1000;
 
 // Pruebas
-// vel1 = 3000;
-// vel2 = 3000;
-// vel3 = 30000;
+ vel1 = 3000;
+ vel2 = 3000;
+ vel3 = 60000;
 
 $( document ).ready(function() {
     $("#musicBack")[0].volume = 0.3;
