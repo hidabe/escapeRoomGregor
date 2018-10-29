@@ -7,11 +7,12 @@ $lifx = new LIFX\Client(LIFX_KEY);
 $option = $_GET['option'];
 switch ($option) {
     case 'off':
+        //$lifx->
     break;
     case 'on':
     break;
     case 'pulseError':
-        $lifx->pulseEffect(LIFX_GROUP, "#FF0000", array('period' => 1, 'cycles' => 5));
+        $lifx->pulseEffect(LIFX_GROUP, "#FF0000", array('period' => 0.3, 'cycles' => 15));
     break;
     case 'win':
     break;
