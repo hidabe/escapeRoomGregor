@@ -2,15 +2,55 @@ var vel1 = 30000;
 var vel2 = 85000;
 var vel3 = 60 * 60 * 1000;
 
+var modifyTime = 0;
+
 // Pruebas
  //vel1 = 3000;
  //vel2 = 10000;
  //vel3 = 60000;
 
 $( document ).ready(function() {
-    $("#musicBack")[0].volume = 0.3;
+    $("html").click(function(event) {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
 
-    parte0();
+        var wUnit = w / 4;
+        var hUnit = h / 4;
+
+        if (event.originalEvent.clientY < hUnit) {
+            if (event.originalEvent.clientX < wUnit) {
+                location.reload();
+            } else if (event.originalEvent.clientX > wUnit && event.originalEvent.clientX < (wUnit * 2)) {
+                parte0();
+            } else if (event.originalEvent.clientX > (wUnit * 2) && event.originalEvent.clientX < (wUnit * 3)) {
+                parte1();
+            } else if (event.originalEvent.clientX > (wUnit * 3)) {
+                parte2();
+            }
+        } else if (event.originalEvent.clientY > hUnit && event.originalEvent.clientY < (hUnit * 3)) {
+            if (event.originalEvent.clientX < wUnit) {
+                $("#sound1")[0].play();
+            } else if (event.originalEvent.clientX > wUnit && event.originalEvent.clientX < (wUnit * 2)) {
+                $("#sound2")[0].play();
+            } else if (event.originalEvent.clientX > (wUnit * 2) && event.originalEvent.clientX < (wUnit * 3)) {
+                $("#sound3")[0].play();
+            } else if (event.originalEvent.clientX > (wUnit * 3)) {
+                $("#sound4")[0].play();
+            }
+        } else if (event.originalEvent.clientY < (hUnit * 4)) {
+            if (event.originalEvent.clientX < wUnit) {
+                modifyTime = modifyTime - 60000;
+            } else if (event.originalEvent.clientX > wUnit && event.originalEvent.clientX < (wUnit * 2)) {
+                modifyTime = modifyTime - (60000 * 5);
+            } else if (event.originalEvent.clientX > (wUnit * 2) && event.originalEvent.clientX < (wUnit * 3)) {
+                modifyTime = modifyTime + 60000;
+            } else if (event.originalEvent.clientX > (wUnit * 3)) {
+                modifyTime = modifyTime + (60000 * 5);
+            }
+        }
+    });
+
+    $("#musicBack")[0].volume = 0.3;
 });
 
 function parte0() {
@@ -146,8 +186,12 @@ function parte3Pierde() {
 /** FUNCIONES **/
 function getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date());
+
+    t = t + modifyTime;
+
     var seconds = Math.floor((t / 1000) % 60);
     var minutes = Math.floor((t / 1000 / 60) % 60);
+
     return {
         'total': t,
         'minutes': minutes,
