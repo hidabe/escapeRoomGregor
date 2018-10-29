@@ -3,9 +3,9 @@ var vel2 = 60000;
 var vel3 = 60 * 60 * 1000;
 
 // Pruebas
-// vel1 = 30000;
-// vel2 = 10000;
-// vel3 = 60000;
+ vel1 = 3000;
+ vel2 = 10000;
+ vel3 = 60000;
 
 $( document ).ready(function() {
     $("#musicBack")[0].volume = 0.3;
@@ -44,7 +44,7 @@ function parte1() {
 
 function parte2() {
     $("#intro")[0].pause();
-    $("#intro").fadeOut();
+    $("#intro").hide();
     $("#parte1").hide();
     $('html').css({'background-image': 'url(img/back3.jpg)'});
     var time = vel3;
