@@ -2,10 +2,22 @@
 require_once("vendor/autoload.php");
 require_once("config.php");
 
-//switch ($option)
 $lifx = new LIFX\Client(LIFX_KEY);
 
-$lifx->pulseEffect(LIFX_GROUP, "#FF0000", array('period' => 1, 'cycles' => 5));
+$option = $_GET['option'];
+switch ($option) {
+    case 'off':
+    break;
+    case 'on':
+    break;
+    case 'pulseError':
+        $lifx->pulseEffect(LIFX_GROUP, "#FF0000", array('period' => 1, 'cycles' => 5));
+    break;
+    case 'win':
+    break;
+    case 'lost':
+    break;
+}
 
 /**
 $result = $lifx->breatheEffect('group:Estudio', "#66FF66", array(

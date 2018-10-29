@@ -10,7 +10,7 @@ var vel3 = 60 * 60 * 1000;
 $( document ).ready(function() {
     $("#musicBack")[0].volume = 0.3;
 
-    parte1();
+    parte0();
 });
 
 function parte0() {
