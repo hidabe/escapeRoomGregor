@@ -14,6 +14,9 @@ $( document ).ready(function() {
 });
 
 function parte0() {
+    $.ajax({
+        url: 'php/api.php?option=off'
+    });
     $("#parte0").fadeIn();
     $("#title1").css("font-size", "90px");
     $("#title1").css("width", "900px");
@@ -34,6 +37,9 @@ function parte0() {
 }
 
 function parte1() {
+    $.ajax({
+        url: 'php/api.php?option=pulseError'
+    });
     $("#parte0").fadeOut();
     $("#intro")[0].play();
     $('html').css({'background-image': 'url(img/back2.jpg)'});
@@ -69,6 +75,10 @@ function parte21() {
 }
 
 function parte22Error(palabra) {
+    $("#sound2")[0].play();
+    $.ajax({
+        url: 'php/api.php?option=pulseError'
+    });
     $("#parte21").fadeOut();
     $("#palabraIncorrecta").html(palabra);
     $("#error").fadeIn();
@@ -77,6 +87,9 @@ function parte22Error(palabra) {
 
 function parte22Correcto() {
     $("#parte21").fadeOut();
+    $.ajax({
+        url: 'php/api.php?option=on'
+    });
     $("#parte22Correcto").fadeIn();
     setTimeout(parte23, 3000);
 }
@@ -98,6 +111,10 @@ function parte23() {
 }
 
 function parte24Error(palabra) {
+    $("#sound3")[0].play();
+    $.ajax({
+        url: 'php/api.php?option=pulseError'
+    });
     $("#parte23").fadeOut();
     $("#palabraIncorrecta").html(palabra);
     $("#error").fadeIn();
@@ -105,6 +122,9 @@ function parte24Error(palabra) {
 }
 
 function parte3Gana() {
+    $.ajax({
+        url: 'php/api.php?option=win'
+    });
     $("#parte2").fadeOut();
     $('html').css({'background-image': 'url(img/finGana.jpg)'});
     $("#musicBack")[0].pause();
@@ -113,9 +133,12 @@ function parte3Gana() {
 }
 
 function parte3Pierde() {
+    $.ajax({
+        url: 'php/api.php?option=lost'
+    });
     $("#parte2").fadeOut();
     $('html').css({'background-image': 'url(img/finPierde.jpg)'});
-    $("#sound3")[0].play();
+    $("#sound1")[0].play();
     $("#musicBack")[0].volume = 0.9;
     $("#parte3Pierde").fadeIn();
 }
