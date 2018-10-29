@@ -1,5 +1,5 @@
 {
     "require": {
-        "kz/lifx-php": "^1.0"
+        "phlak/lifx-client": "^1.0"
     }
 }

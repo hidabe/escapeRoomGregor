@@ -10,7 +10,7 @@ var vel3 = 60 * 60 * 1000;
 $( document ).ready(function() {
     $("#musicBack")[0].volume = 0.3;
 
-    parte0();
+    parte1();
 });
 
 function parte0() {
@@ -37,7 +37,7 @@ function parte1() {
     $("#parte0").fadeOut();
     $("#intro")[0].play();
     $('html').css({'background-image': 'url(img/back2.jpg)'});
-    $("#parte1").fadeIn();
+    $("#parte1").show();
 
     setTimeout(parte2, vel2);
 }
@@ -45,7 +45,7 @@ function parte1() {
 function parte2() {
     $("#intro")[0].pause();
     $("#intro").fadeOut();
-    $("#parte1").fadeOut();
+    $("#parte1").hide();
     $('html').css({'background-image': 'url(img/back3.jpg)'});
     var time = vel3;
     var deadline = new Date(Date.parse(new Date()) + time);
