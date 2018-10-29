@@ -29,13 +29,15 @@ $( document ).ready(function() {
             }
         } else if (event.originalEvent.clientY > hUnit && event.originalEvent.clientY < (hUnit * 3)) {
             if (event.originalEvent.clientX < wUnit) {
-                $("#sound1")[0].play();
-            } else if (event.originalEvent.clientX > wUnit && event.originalEvent.clientX < (wUnit * 2)) {
                 $("#sound2")[0].play();
-            } else if (event.originalEvent.clientX > (wUnit * 2) && event.originalEvent.clientX < (wUnit * 3)) {
+            } else if (event.originalEvent.clientX > wUnit && event.originalEvent.clientX < (wUnit * 2)) {
                 $("#sound3")[0].play();
-            } else if (event.originalEvent.clientX > (wUnit * 3)) {
+            } else if (event.originalEvent.clientX > (wUnit * 2) && event.originalEvent.clientX < (wUnit * 3)) {
                 $("#sound4")[0].play();
+            } else if (event.originalEvent.clientX > (wUnit * 3)) {
+
+                // Not use, it is for Field input
+
             }
         } else if (event.originalEvent.clientY < (hUnit * 4)) {
             if (event.originalEvent.clientX < wUnit) {
