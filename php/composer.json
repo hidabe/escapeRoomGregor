@@ -1,0 +1,5 @@
+{
+    "require": {
+        "kz/lifx-php": "^1.0"
+    }
+}
