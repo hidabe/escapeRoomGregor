@@ -4,6 +4,8 @@ require_once("config.php");
 
 $lifx = new LIFX\Client(LIFX_KEY);
 
+ini_set("display_errors", 1);
+
 $option = $_GET['option'];
 switch ($option) {
     case 'off':
